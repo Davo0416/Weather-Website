@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather App</title>
+    <meta charset="utf-8">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="SHORTCUT ICON" HREF="owm.ico"> 
+	<link rel="stylesheet" type="text/css" href="leaflet/leaflet.css" />
+	<link rel="stylesheet" type="text/css" href="../leaflet-openweathermap.css" />
+	<link rel="stylesheet" type="text/css" href="files/map.css" />
+  	<link rel="stylesheet" type="text/css" href="leaflet/leaflet-languageselector.css" />  
+	
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	
+</head>
+<body onload = "getLocation()">
+    <div class = "mainVertical">
+        <div class="mainContainer">
+            <h1>Weather</h1>
+            <input type="text" id="locationInput" placeholder="Enter a city">
+            <button id="searchButton">Search</button>
+            <div id="locationDiv">
+                <h2 id="location"></h2>
+                <img id="flag" draggable="false">
+                <br> 
+            </div>
+            
+            <div class="weather-info">
+                
+                <div id="tempDiv">
+                    <img id="weatherIcon" draggable="false">
+                    <p id="temperature"></p> 
+                    <input id="tempUnit" type="image" src="Weather_Icons/celcius.png" />
+                </div>
+
+                <div id="weatherDiv">
+                    <p class = "bold"> Weather</p>
+                    <p id="time"></p>
+                    <p id="description"></p>
+                </div>
+                <canvas id="myChart"></canvas>
+                <div id="forecastDiv"> 
+                    <div class = "forecast" onclick="changeDay(0)">
+                        <p class = "forecastDay">Mon</p>
+                        <img class="forecastIcon" src="Weather_Icons/clear sky.png" draggable="false">
+                        <p class = "Max">Max</p> 
+                        <p class = "Min">Min</p>
+                        <p class = "forecastTempMax">-4</p> 
+                        <p class = "forecastTempMin">-4</p>
+                    </div>
+                    <div class = "forecast" onclick="changeDay(1)">
+                        <p class = "forecastDay">Tue</p>
+                        <img class="forecastIcon" src="Weather_Icons/clear sky.png" draggable="false">
+                        <p class = "Max">Max</p> 
+                        <p class = "Min">Min</p>
+                        <p class = "forecastTempMax">-4</p>
+                        <p class = "forecastTempMin">-4</p>
+                    </div>
+                    <div class = "forecast" onclick="changeDay(2)">
+                        <p class = "forecastDay">Tue</p>
+                        <img class="forecastIcon" src="Weather_Icons/clear sky.png" draggable="false">
+                        <p class = "Max">Max</p> 
+                        <p class = "Min">Min</p>
+                        <p class = "forecastTempMax">-4</p>
+                        <p class = "forecastTempMin">-4</p>
+                    </div>
+                    <div class = "forecast" onclick="changeDay(3)">
+                        <p class = "forecastDay">Tue</p>
+                        <img class="forecastIcon" src="Weather_Icons/clear sky.png" draggable="false">
+                        <p class = "Max">Max</p> 
+                        <p class = "Min">Min</p>
+                        <p class = "forecastTempMax">-4</p>
+                        <p class = "forecastTempMin">-4</p>
+                    </div>
+                    <div class = "forecast" onclick="changeDay(4)">
+                        <p class = "forecastDay">Tue</p>
+                        <img class="forecastIcon" src="Weather_Icons/clear sky.png" draggable="false">
+                        <p class = "Max">Max</p> 
+                        <p class = "Min">Min</p>
+                        <p class = "forecastTempMax">-4</p>
+                        <p class = "forecastTempMin">-4</p>
+                    </div>
+                </div>
+
+            </div>
+
+            
+        </div>
+    </div>
+    <div class = "vertical">
+        <div class="container">
+            <h1 id="columnH1">Wind</h1>
+            <img id = "compass" src= "Weather_Icons/Compass.png">
+            <img id = "compass_arrow" src= "Weather_Icons/Compass_Arrow.png">
+            <p id="windSpeed">Speed: </p>
+        </div>
+
+        <div class="container">
+            <h1 id="columnH1">Humidity</h1>
+            <img id = "humidity" src= "Weather_Icons/Humidity.png">
+            <canvas id="humidityChart" style = "width: 84%"></canvas>
+            <p id="humidityTxt">50% </p>
+        
+        </div>
+    </div>
+    <div class = "vertical">
+        <div class="container">
+            <h1 id="columnH1">Sky</h1>
+            <img id="skyIcon" src="Weather_Icons/broken clouds.png" draggable="false">
+            <p id="cloudsTxt">Broken Clouds</p>
+            <p id="cloudinessTxt">Cloudiness: 70%</p>
+        </div>
+
+        <div class="container">
+            <h1 id="columnH1Pressure">Pressure</h1>
+            <img id="skyIcon" src="Weather_Icons/PressureMeter.png" draggable="false">
+            <img id="pressureArrow" src="Weather_Icons/PressureArrow.png" draggable="false">
+            <p id="pressureTxt"> </p>
+        </div>
+
+        
+    </div>
+    <div class = "vertical" style="width: 31%;">
+        <div id="mapContainer">
+            <h1>Weather Map</h1>
+            <div id="map"></div>
+        </div>
+    </div>
+    <!--<div id="empty"> </div>-->
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="files/map.js"></script>
+	<script src="leaflet/leaflet.js"></script>
+	<script src="leaflet/Permalink.js"></script>
+	<script src="leaflet/Permalink.Layer.js"></script>
+	<script src="leaflet/Permalink.Overlay.js"></script>
+	<script src="../leaflet-openweathermap.js"></script>
+	<script src="leaflet/leaflet-languageselector.js"></script>
+	<script src="files/map_i18n.js"></script>
+    <!--<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>-->
+    <script src="javascript.js"></script>
+</body>
+</html>

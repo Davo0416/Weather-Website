@@ -1,0 +1,1089 @@
+*{
+    user-select: none;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.container {
+    max-width: 400px;
+    max-height: calc(100vh - 82px);
+    margin: 10px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.5); /* Set the background color to be transparent */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Adjust the alpha value here for the box shadow transparency */
+    float: left;
+    position: relative;
+}
+
+.mainContainer{
+    max-width: 400px;
+    max-height: calc(100vh - 82px);
+    margin: 10px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.5); /* Set the background color to be transparent */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Adjust the alpha value here for the box shadow transparency */
+    float: left;
+    position: relative;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+input[type="text"] {
+    width: 72.5%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#tempUnit{
+    margin-top: 22.5px;
+    padding: 0px;
+    cursor: pointer;
+    width: auto;
+    height: 30px;
+}
+
+
+.bold{
+    font-size: large;
+    font-weight: bold;
+    margin: 0;
+}
+
+.weather-info{
+    /*background-color: blue;*/
+    overflow: hidden;
+}
+
+#tempDiv{
+    margin: 0;
+    padding: 5px;
+    text-align: left;
+    float: left;
+    /*background-color: red;*/
+    width:60%;
+    height: auto;
+}
+
+#weatherDiv{
+    margin: 0;
+    text-align: right;
+    padding: 5px;
+    float: left;
+    /*background-color: yellow;*/
+    width:33%;
+    height: auto;
+}
+
+#time,#description{
+    margin: 0;
+}
+
+#location{
+    width: fit-content;
+    margin-bottom: 5px;
+    float: left;
+}
+
+#locationDiv{
+    width:100%;
+    overflow: auto;
+}
+
+#flag{
+    float: left;
+    width: 30px;
+    height: 20px;
+    margin: 22.5px;
+    margin-left: 10px;
+    border-radius: 3px;
+    margin-bottom: 5px;
+}
+
+#weatherIcon{
+    float: left;
+    width: 75px;
+    height: 75px;
+}
+
+#temperature{
+    float: left;
+    font-size: 40px;
+    margin: 15px;
+    margin-right: 0px;
+}
+
+#forecastDiv{
+    float: left;
+    width: 100%;
+    height: fit-content;
+    white-space: nowrap;    
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+.forecast{
+    background-color: #f0f0f0;
+    border-radius: 20px 20px 5px 5px;
+    height: fit-content;
+    width: 91px;
+    margin-right: 2px;
+    float: none;
+    display: inline-block;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    cursor: pointer;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-left: 2px;
+}
+
+#forecast:hover {
+    background-color: rgb(230, 230, 230);
+  }
+
+.forecastIcon{
+    width: 80%;
+    margin: auto;
+    margin-bottom:5px ;
+    display: block;
+    height: auto;
+}
+
+.forecastTempMax,.forecastTempMin{
+    margin: 0px;
+    width: 30%;
+    text-align: center;
+    float: left;
+    margin: 4%;
+    margin-bottom: 0px;
+    margin-top: 0%;
+    border-radius: 0px 0px 5px 5px;
+    padding: 5px;
+}
+
+.forecastTempMax{
+    background-color:rgb(255, 207, 117) ;
+}
+
+.forecastTempMin{
+    background-color:lightblue;
+}
+
+.Min,.Max{
+    margin: 0px;
+    width: 30%;
+    text-align: center;
+    float: left;
+    margin: 4%;
+    margin-bottom: 0%;
+    border-radius: 5px 5px 0px 0px;
+    padding: 5px;
+    font-size: 12px;
+}
+
+.Max{
+    background-color:rgb(255, 188, 64) ;
+}
+
+.Min{
+    background-color:rgb(100, 196, 227);
+}
+
+.forecastDay{
+    margin: 5px;
+
+    text-align: center;
+}
+
+#myChart{
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    padding: 5px;
+
+    max-width: 98.5%;
+}
+
+#compass{
+    width: 200px;
+    height: 200px;
+}
+
+#humidity{
+    margin-top: 20px; 
+    width: 198px;
+    height: 195px; 
+}
+
+#compass_arrow{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 64px;
+    left: 20px;
+}
+
+#windSpeed{
+    font-size:x-large;
+    text-align: center;
+    color:rgba(166, 166, 201, 1);
+}
+
+#humidityChart{
+    transform: rotate(198deg) !important;
+    position: absolute !important;
+    top: 89px !important;
+    left: 18px !important;
+}
+
+#humidityTxt{
+    font-size:55px;
+    text-align: center;
+    color:rgba(54, 163, 235, 0.6);
+    width:100%;
+    position: absolute;
+    top: 92px;
+    left: 5px;
+}
+
+#columnH1{
+    margin-bottom: 9px;
+    margin-top: 9px;
+}
+
+#columnH1Pressure{
+    margin-bottom: 24px;
+    margin-top: 9px;
+}
+
+.vertical{
+    margin-top: 10px;
+    height: calc(100vh - 40px);
+    width: 258px;
+    float: left;
+}
+
+.mainVertical{
+    margin-top: 10px;
+    height: calc(100vh - 40px);
+    width: 460px;
+    float: left;
+}
+
+#skyIcon, #pressureArrow{
+    width:200px;
+    height: 200px;
+}
+
+#pressureArrow{
+    position: absolute;
+    top:80px;
+    right:20px;
+}
+
+#cloudsTxt{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size:x-large;
+    text-align: center;
+    color:rgb(169, 206, 235);
+}
+
+#cloudinessTxt{
+    margin-top: 0px;
+    margin-bottom: 20px;
+    font-size:x-large;
+    text-align: center;
+    color:rgb(169, 206, 235);
+}
+
+#pressureTxt{
+    position: absolute;
+    top:225px;
+    right:75px;
+    font-size:22px;
+    text-align: center;
+    width: 88px;
+    color:rgb(235, 145, 141);
+}
+
+#weatherMap{
+    position: absolute;
+    width: 1000px;
+    height: 1000px;
+    opacity: 2;
+}
+
+#mapContainer{
+    width:calc(31vw);
+    margin: 10px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.5); /* Set the background color to be transparent */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Adjust the alpha value here for the box shadow transparency */
+    float: left;
+    margin-bottom: 1px;
+}
+
+#map{
+    width:100%;
+    height: calc(100vh - 140px);
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 412px) {
+    body {
+        width: 100%;
+        height: 100%;
+    }
+
+    .vertical{
+        height:fit-content ;
+        width: 100%;
+    }
+
+    .mainVertical{
+        margin-top: 0px;
+        width: 100%;
+        height: fit-content;
+    }
+
+    .mainContainer{
+        width: calc(100vw - 60px);
+    }
+
+    .container{
+        margin-top: 0px;
+        width: 35.4%;
+        height: 250px;
+    }
+
+    input[type="text"]{
+        width: 69%;
+    }
+
+    .forecast{
+        width: 80px;
+    }
+    
+    .Min,.Max{
+        width: 29%;
+    }
+
+    .forecastTempMax,.forecastTempMin{
+        width: 29%;
+    }
+
+    #mapContainer{
+        width:85vw;
+        height: 94vh;
+    }
+
+    #compass,#compass_arrow, #skyIcon, #pressureArrow{
+        width: 150px;
+        height: 150px;
+    }
+    
+
+    #humidity{
+        margin-top: 20px; 
+        width: 150px;
+        height: 147.7px; 
+    }
+    
+    #humidityChart{
+        transform: rotate(198deg) !important;
+        position: absolute !important;
+        top: 87px !important;
+        left: 17px !important;
+    }
+
+    #humidityTxt{
+        font-size:40px;
+        top: 95px;
+    }
+
+    #windSpeed{
+        font-size: 21px;
+    }
+
+    #pressureTxt{
+        top:190px;
+        right:50px;
+        font-size:17px;
+        width: 88px;
+    }
+
+    #cloudinessTxt, #cloudsTxt{
+        margin-top: 0px;
+        font-size:18px;
+        text-align: center;
+        color:rgb(169, 206, 235);
+    }
+    
+  }
+
+
+
+@media screen and (min-width: 1600px) {
+
+    input[type="text"]{
+        width: 79%;
+    }
+
+    .container{
+        height: 42.5vh;
+    }
+
+    #myChart{
+        margin-top: 140px;
+        margin-bottom: 20px;
+    }
+
+    h1{
+        font-size: xx-large;
+    }
+
+    #flag{
+        margin-top: 30px;
+        width: 45px;
+        height: 30px;
+    }
+
+    #location{
+        font-size: xx-large;
+    }
+
+    #weatherDiv{
+        margin-top: 20px;
+    }
+
+
+    #tempUnit{
+        margin-top: 30px;
+        width: 100px;
+        height: auto;
+    }
+
+    #temperature{
+        font-size: 64px; 
+    }
+
+    #weatherIcon{
+        width: 100px;
+        height: auto;
+    }
+
+    .bold{
+        font-size: larger; 
+    }
+     #time, #description{
+        font-size: large;
+    }
+
+    #mapContainer{
+        width:40vw;
+        height: 91.5vh;
+    }
+
+    #map{
+        height: 83vh;
+    }
+
+    .mainVertical{
+        width: 30vw;
+    }
+
+    .mainContainer{
+        max-width: 800px;
+        width: 27vw;
+        height: 100vh;
+    }
+    .forecast{
+        width: 121px;
+
+    }
+
+    #forecastDiv{
+        margin-top: 10px;
+    }
+
+    #compass_arrow{
+        top: 74px;
+    }
+
+    #humidityChart{
+        top: 100px !important;
+        left: 17px !important;
+    }
+
+    #pressureArrow{
+        top:90px;
+    }
+
+
+    #humidityTxt{
+        top: 105px;
+    }
+
+    #pressureTxt{
+        top:235px;
+    }
+
+    #cloudinessTxt, #cloudsTxt{
+        margin-bottom: 10px;
+        font-size:30px;
+    }
+
+    #windSpeed{
+        font-size: 50px;
+        margin-top: 0px;
+    }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 1000px) {
+    .vertical{
+        height: 51%;
+    }
+    .mainVertical{
+        height: 51%;
+    }
+
+    #mapContainer{
+        width: 293%;
+        height: 83%;
+    }
+
+    #map{
+        height: 90%;
+    }
+}
+
+@media screen and (max-width: 1000px) and (min-width: 800px) {
+    .vertical{
+        height: 68%;
+        width: 40%;
+    }
+    .mainVertical{
+        height: 68%;
+        width: 60%;
+    }
+
+    .mainContainer{
+        height: 90.5%;
+        
+    }
+
+    #myChart{
+        margin-top: 110px;
+        margin-bottom: 30px;
+
+    }
+
+    #locationDiv{
+        margin-bottom: 10px;
+    }
+
+    #mapContainer{
+        width: 168%;
+        height: 91.5%;
+    }
+
+    .container{
+        height: 41.5%;
+        width: 80%;
+    }
+
+    #map{
+        height: 90%;
+    }
+
+    #compass,#compass_arrow, #skyIcon, #pressureArrow{
+        width: 200px;
+        height: 200px;
+        margin-left: 20px;
+    }
+
+    #pressureArrow{
+        left: 20px;
+    }
+
+    #pressureTxt{
+        left: 100px;
+    }
+
+    #humidity{
+        width: 240px;
+        height: 240px;
+    }
+
+    #humidityTxt{
+        top:95px;
+        font-size: 70px;
+    }
+
+    #cloudsTxt, #cloudinessTxt{
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 800px) and (min-width: 760px) {
+    .vertical{
+        height: 68%;
+        width: 40%;
+    }
+    .mainVertical{
+        height: 68%;
+    }
+
+    #mapContainer{
+        width: 168%;
+        height: 91.5%;
+    }
+
+    .container{
+        height: 41.5%;
+        width: 80%;
+    }
+
+    #map{
+        height: 90%;
+    }
+
+    #compass,#compass_arrow, #skyIcon, #pressureArrow{
+        width: 200px;
+        height: 200px;
+        margin-left: 20px;
+    }
+
+    #pressureArrow{
+        left: 20px;
+    }
+
+    #pressureTxt{
+        left: 100px;
+    }
+
+    #humidity{
+        width: 240px;
+        height: 240px;
+    }
+
+    #humidityTxt{
+        top:95px;
+        font-size: 70px;
+    }
+}
+
+@media screen and (max-width: 431px)  and (min-width: 420px){
+
+    body{ 
+        width: 105vw;   
+    }
+    input[type="text"]{
+        width: 72%;
+    }
+
+    .container{
+        margin-top: 0px;
+        width: 80%;
+        height: 300px;
+    }
+
+    .mainVertical{
+        height: 73%;
+    }
+
+    .vertical{
+        margin-right: 10px;
+        height: 74%;
+        width: 47.5%;
+    }
+
+    #pressureTxt{
+        top:205px;
+        right:64px;
+        font-size: 18px;
+    }
+
+    #compass,#compass_arrow, #skyIcon, #pressureArrow{
+        width: 175px;
+        height: 175px;
+    }
+
+    #humidity{
+        width: 170px;
+        height: 170px;
+    }
+
+    #humidityTxt{
+        top: 94px;
+        font-size: 47px;
+    }
+
+    #cloudsTxt, #cloudinessTxt{
+        font-size: 20px;
+    }
+
+    #humidityChart{
+        top: 87px !important;
+        left: 17px !important;
+    }
+
+    .forecast{
+        width: 93px;
+    }
+
+    .Min,.Max{
+        width: 25%;
+        font-size: 10px;
+    }
+
+    .forecastTempMax,.forecastTempMin{
+        width: 25%;
+        font-size: 10px;    
+    }
+
+    #weatherIcon{
+        width: 60px;
+        height: auto;
+    }
+
+    #temperature{
+       font-size: 35px; 
+    }
+
+    #tempUnit{
+        width: 50px;
+        height: auto;
+    }
+
+    #mapContainer{
+        width: 282%;
+    }
+
+}
+
+@media screen and (max-width: 420px)  and (min-width: 413px){
+
+    body{ 
+        width: 110vw;   
+    }
+    input[type="text"]{
+        width: 72%;
+    }
+
+    .container{
+        margin-top: 0px;
+        width: 80%;
+        height: 300px;
+    }
+
+    .mainVertical{
+        height: 76%;
+    }
+
+    .vertical{
+        margin-right: 10px;
+        height: 76%;
+        width: 47.5%;
+    }
+
+    #pressureTxt{
+        top:205px;
+        right:64px;
+        font-size: 18px;
+    }
+
+    #compass,#compass_arrow, #skyIcon, #pressureArrow{
+        width: 175px;
+        height: 175px;
+    }
+
+    #humidity{
+        width: 170px;
+        height: 170px;
+    }
+
+    #humidityTxt{
+        top: 94px;
+        font-size: 47px;
+    }
+
+    #cloudsTxt, #cloudinessTxt{
+        font-size: 20px;
+    }
+
+    #humidityChart{
+        top: 87px !important;
+        left: 17px !important;
+    }
+
+    .forecast{
+        width: 93px;
+    }
+
+    .Min,.Max{
+        width: 25%;
+        font-size: 10px;
+    }
+
+    .forecastTempMax,.forecastTempMin{
+        width: 25%;
+        font-size: 10px;    
+    }
+
+    #weatherIcon{
+        width: 60px;
+        height: auto;
+    }
+
+    #temperature{
+       font-size: 35px; 
+    }
+
+    #tempUnit{
+        width: 50px;
+        height: auto;
+    }
+
+    #mapContainer{
+        width: 282%;
+    }
+
+}
+
+@media screen and (max-width: 380px) and (min-width: 370px) {
+
+    input[type="text"]{
+        width: 65%;
+    }
+    .container{
+        margin-top: 0px;
+        width: 33.3%;
+        height: 250px;
+    }
+
+    #pressureTxt{
+        top:165px;
+        right:40px;
+        font-size: 13px;
+    }
+
+    #compass,#compass_arrow, #skyIcon, #pressureArrow{
+        width: 120px;
+        height: 120px;
+    }
+
+    #pressureArrow{
+        left: 20px;
+    }
+
+    #humidity{
+        width: 130px;
+        height: 130px;
+    }
+
+    #humidityTxt{
+        top: 105px;
+        font-size: 30px;
+    }
+
+    #humidityChart{
+        top: 89px !important;
+        left: 17px !important;
+    }
+
+    .forecast{
+        width: 70px;
+    }
+
+    .Min,.Max{
+        width: 25%;
+        font-size: 10px;
+    }
+
+    .forecastTempMax,.forecastTempMin{
+        width: 25%;
+        font-size: 10px;    
+    }
+
+    #weatherIcon{
+        width: 60px;
+        height: auto;
+    }
+
+    #temperature{
+       font-size: 35px; 
+    }
+
+    #tempUnit{
+        width: 50px;
+        height: auto;
+    }
+
+}
+
+@media screen and (max-width: 391px) and (min-width: 380px) {
+
+    input[type="text"]{
+        width: 67%;
+    }
+    .container{
+        margin-top: 0px;
+        width: 33.3%;
+        height: 250px;
+    }
+
+    #pressureTxt{
+        top:175px;
+        right:40px;
+        font-size: 13px;
+    }
+
+    #compass,#compass_arrow, #skyIcon, #pressureArrow{
+        width: 130px;
+        height: 130px;
+    }
+
+    #pressureArrow{
+        left: 20px;
+    }
+
+    #humidity{
+        width: 130px;
+        height: 130px;
+    }
+
+    #humidityTxt{
+        top: 105px;
+        font-size: 30px;
+    }
+
+    #humidityChart{
+        top: 89px !important;
+        left: 17px !important;
+    }
+
+    .forecast{
+        width: 75px;
+    }
+
+    .Min,.Max{
+        width: 25%;
+        font-size: 10px;
+    }
+
+    .forecastTempMax,.forecastTempMin{
+        width: 25%;
+        font-size: 10px;    
+    }
+
+    #weatherIcon{
+        width: 60px;
+        height: auto;
+    }
+
+    #temperature{
+       font-size: 35px; 
+    }
+
+    #tempUnit{
+        width: 50px;
+        height: auto;
+    }
+
+}
+
+@media screen and (max-width: 361px)  and (min-width: 350px){
+
+    input[type="text"]{
+        width: 63.5%;
+    }
+    .container{
+        margin-top: 0px;
+        width: 33.3%;
+        height: 250px;
+    }
+
+    #pressureTxt{
+        top:170px;
+        right:35px;
+        font-size: 12px;
+    }
+
+    #compass,#compass_arrow, #skyIcon, #pressureArrow{
+        width: 120px;
+        height: 120px;
+    }
+
+    #humidity{
+        width: 130px;
+        height: 130px;
+    }
+
+    #humidityTxt{
+        top: 105px;
+        font-size: 30px;
+    }
+
+    #humidityChart{
+        top: 87px !important;
+        left: 17px !important;
+    }
+
+    .forecast{
+        width: 66px;
+    }
+
+    .Min,.Max{
+        width: 25%;
+        font-size: 10px;
+    }
+
+    .forecastTempMax,.forecastTempMin{
+        width: 25%;
+        font-size: 10px;    
+    }
+
+    #weatherIcon{
+        width: 60px;
+        height: auto;
+    }
+
+    #temperature{
+       font-size: 35px; 
+    }
+
+    #tempUnit{
+        width: 50px;
+        height: auto;
+    }
+
+}
+
+
+
+
+
+
+
