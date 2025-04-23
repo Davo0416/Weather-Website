@@ -1,8 +1,8 @@
 const apiKey = '27328359aeb6e603be6a469e4e0e3dea';
 const apiUrl = 'https://api.openweathermap.org/data/2.5/weather';
-const reverseGeoUrl = 'http://api.openweathermap.org/geo/1.0/reverse';
-const geoUrl = 'http://api.openweathermap.org/geo/1.0/direct';
-const forecastUrl = 'http://api.openweathermap.org/data/2.5/forecast';
+const reverseGeoUrl = 'https://api.openweathermap.org/geo/1.0/reverse';
+const geoUrl = 'https://api.openweathermap.org/geo/1.0/direct';
+const forecastUrl = 'https://api.openweathermap.org/data/2.5/forecast';
 const weatherMapUrl = 'https://tile.openweathermap.org/map';
 
 const locationInput = document.getElementById('locationInput');
